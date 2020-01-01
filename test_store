@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# test_store - A script to compile and test linked list.
+# Author: Mihir Patel
+#
+# IMPORTANT: Your source code must be named "store.c"
+# To use the script, copy it into the same directory as your scource file
+# Set execute permission for the file by issuing the command:
+# chmod +x test_store
+# To run the script, type 
+# ./test_store
+# The user input from the script will not be shown on the screen.
+# Compare the results from your program with the expected results on the test cases.
+
+# compile the program
+echo 'TESTING STORE PROGRAM FOR' $USER
+echo '===========    COMPILING YOUR PROGRAM    ==========='
+make
+
+echo '================    START OF TEST    ==============='
+
+
+####################################################
+./store <<-EndOfInput
+a
+milk
+2.97
+a
+coffee
+6.98
+a
+bread
+2.56
+a
+coffee
+s
+coffee
+s
+egg
+p
+q
+EndOfInput
+
+cat <<- _EOF
+----------------------------------------------------
+EXPECTED:
+
+Append item: a
+Search item: s
+Print items: p
+Quit:        q
+Enter operation code: a
+Enter item name: milk
+Enter price: 2.97
+
+Enter operation code: a
+Enter item name: coffee
+Enter price: 6.98
+
+Enter operation code: a
+Enter item name: bread
+Enter price: 2.56
+
+Enter operation code: a
+Enter item name: coffee
+Item already exists.
+
+Enter operation code: s
+Enter item name: coffee
+Price of     coffee is \$6.98
+
+Enter operation code: s
+Enter item name: egg
+Item not found.
+
+Enter operation code: p
+Price of         milk is \$2.97
+Price of       coffee is \$6.98
+Price of        bread is \$2.56
+
+Enter operation code: q
+
+====================================================
+
+_EOF
+
+
+
+echo '=================    END OF TEST    ================'
