@@ -21,7 +21,11 @@ Following are some base files which I have made:
    - This file has the main function. You can see a pointer variable to item structure which points to the first node in the linked list.        
 
 Please use the premade make file to get an executable. Then do gcc -Wall ./store in a linux or minGW environment. To test everything at once, please use the file test_store.
-      
+     
+Status
+-------
+Completed   
+
 Examples   
 --------   
 Below are some examples of how this code runs. 
